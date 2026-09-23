@@ -1,0 +1,6 @@
+{
+  "name": "PulseHealth - Organizational Health Diagnostics",
+  "description": "Enterprise SaaS organizational health diagnostics platform featuring real-time burnout risk index, 360° health matrix, AI-driven actionable insights, and pulse assessment engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
