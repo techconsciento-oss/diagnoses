@@ -147,21 +147,21 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#1d1230] border border-white/[0.12] rounded-3xl shadow-2xl flex flex-col h-[650px] max-h-[90vh] overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-[#2c1337] border border-white/[0.14] rounded-3xl shadow-2xl flex flex-col h-[650px] max-h-[90vh] overflow-hidden">
         {/* Header */}
-        <div className="p-4 sm:p-5 bg-gradient-to-r from-purple-900/60 via-[#1d1230] to-[#06b6d4]/20 border-b border-white/[0.08] flex items-center justify-between">
+        <div className="p-4 sm:p-5 bg-gradient-to-r from-[#9c5295]/30 via-[#3d1c4a] to-[#25102f] border-b border-white/[0.1] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-purple-600 to-[#ec4899] text-white shadow-md">
+            <div className="p-2.5 rounded-xl bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/30">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-base font-bold text-white">AI Diagnostic Copilot</h3>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#9c5295]/20 text-[#f0b8dc] border border-[#9c5295]/40">
                   PulseNeural Model
                 </span>
               </div>
-              <p className="text-xs text-gray-400">Context: {department === 'all' ? 'Company-wide' : department} telemetry</p>
+              <p className="text-xs text-[#cfbfdb]">Context: {department === 'all' ? 'Company-wide' : department} telemetry</p>
             </div>
           </div>
 
@@ -175,15 +175,15 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
         </div>
 
         {/* Quick Prompts Bar */}
-        <div className="p-3 bg-black/30 border-b border-white/[0.04] overflow-x-auto no-scrollbar flex items-center gap-2">
-          <span className="text-[10px] uppercase font-bold text-gray-500 tracking-wider flex-shrink-0">
+        <div className="p-3 bg-black/30 border-b border-white/[0.06] overflow-x-auto no-scrollbar flex items-center gap-2">
+          <span className="text-[10px] uppercase font-bold text-[#cfbfdb]/60 tracking-wider flex-shrink-0">
             Suggested:
           </span>
           {quickPrompts.map((qp, idx) => (
             <button
               key={idx}
               onClick={() => handleSendMessage(qp.query)}
-              className="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-gray-300 hover:text-cyan-300 border border-white/[0.06] whitespace-nowrap transition-colors flex-shrink-0"
+              className="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-[#cfbfdb] hover:text-[#f0b8dc] border border-white/[0.08] hover:border-[#9c5295]/50 whitespace-nowrap transition-colors flex-shrink-0"
             >
               {qp.label}
             </button>
@@ -198,7 +198,7 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
               className={`flex gap-3 ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {m.sender === 'ai' && (
-                <div className="w-8 h-8 rounded-full bg-purple-600/30 border border-purple-500/40 flex items-center justify-center text-purple-300 flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#9c5295]/20 border border-[#9c5295]/40 flex items-center justify-center text-[#f0b8dc] flex-shrink-0 mt-0.5">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
@@ -206,17 +206,17 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
               <div
                 className={`max-w-[85%] rounded-2xl p-4 text-xs leading-relaxed space-y-3 ${
                   m.sender === 'user'
-                    ? 'bg-gradient-to-r from-purple-600 to-[#06b6d4] text-white shadow-md'
-                    : 'bg-black/40 border border-white/[0.08] text-gray-200'
+                    ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/25'
+                    : 'bg-[#381a46]/80 border border-white/[0.1] text-gray-200'
                 }`}
               >
                 <div className="whitespace-pre-line">{m.text}</div>
 
                 {/* If AI generated an Action Card suggestion */}
                 {m.actionCardData && (
-                  <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-500/30 space-y-2 mt-2">
+                  <div className="p-3 rounded-xl bg-[#381a46]/90 border border-[#9c5295]/40 space-y-2 mt-2">
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="font-bold text-purple-300 flex items-center gap-1">
+                      <span className="font-bold text-[#f0b8dc] flex items-center gap-1">
                         <Zap className="w-3.5 h-3.5 text-yellow-300" />
                         AI Recommended Leadership Action Card
                       </span>
@@ -231,10 +231,10 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
                     <button
                       disabled={addedCards[m.id]}
                       onClick={() => handleAddCard(m.id, m.actionCardData!)}
-                      className={`w-full py-1.5 px-2.5 rounded-lg text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all ${
+                      className={`w-full py-1.5 px-3 rounded-full text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all ${
                         addedCards[m.id]
                           ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                          : 'bg-purple-600 hover:bg-purple-500 text-white shadow-sm'
+                          : 'bg-[#9c5295] hover:bg-[#b05fa8] text-white font-bold shadow-md shadow-[#9c5295]/30'
                       }`}
                     >
                       {addedCards[m.id] ? (
@@ -254,7 +254,7 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
               </div>
 
               {m.sender === 'user' && (
-                <div className="w-8 h-8 rounded-full bg-[#06b6d4]/30 border border-[#06b6d4]/40 flex items-center justify-center text-cyan-300 flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#9c5295] border border-[#f0b8dc]/40 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -262,7 +262,7 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
           ))}
 
           {isTyping && (
-            <div className="flex items-center gap-2 text-xs text-purple-400 pl-11">
+            <div className="flex items-center gap-2 text-xs text-[#f0b8dc] pl-11">
               <Bot className="w-3.5 h-3.5 animate-spin" />
               <span>Analyzing cross-department telemetry signals...</span>
             </div>
@@ -283,12 +283,12 @@ export const AIDiagnosticCopilotModal: React.FC<AIDiagnosticCopilotModalProps> =
             placeholder="Ask about team trust, burnout indicators, or executive summaries..."
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-            className="flex-1 px-4 py-2.5 text-xs bg-black/50 border border-white/[0.1] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#06b6d4]"
+            className="flex-1 px-4 py-2.5 text-xs bg-black/50 border border-white/[0.1] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#9c5295]"
           />
           <button
             type="submit"
             disabled={!inputText.trim() || isTyping}
-            className="p-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-[#06b6d4] text-white disabled:opacity-40 hover:opacity-95 shadow-md flex items-center justify-center cursor-pointer"
+            className="p-2.5 rounded-xl bg-[#9c5295] hover:bg-[#b05fa8] text-white disabled:opacity-40 shadow-md shadow-[#9c5295]/30 flex items-center justify-center cursor-pointer"
           >
             <Send className="w-4 h-4" />
           </button>

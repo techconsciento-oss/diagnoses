@@ -65,17 +65,17 @@ export const LoginRoleModal: React.FC<LoginRoleModalProps> = ({
       id="login-role-modal-backdrop"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-2xl bg-gradient-to-b from-[#21153b] to-[#150d24] border border-white/[0.12] rounded-3xl shadow-2xl p-6 sm:p-8 space-y-6 overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-[#2c1337] border border-white/[0.14] rounded-3xl shadow-2xl p-6 sm:p-8 space-y-6 overflow-hidden">
         {/* Glow ambient effects */}
-        <div className="absolute -top-10 -right-10 w-60 h-60 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-[#06b6d4]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-10 -right-10 w-60 h-60 bg-[#9c5295]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-[#f0b8dc]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Header */}
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#06b6d4] via-[#8b5cf6] to-[#ec4899] p-[1.5px] shadow-lg">
-              <div className="w-full h-full bg-[#1b122c] rounded-[10px] flex items-center justify-center">
-                <Activity className="w-5 h-5 text-[#06b6d4]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#9c5295] via-[#c07ab7] to-[#f0b8dc] p-[1.5px] shadow-lg shadow-[#9c5295]/30">
+              <div className="w-full h-full bg-[#25102f] rounded-[10px] flex items-center justify-center">
+                <Activity className="w-5 h-5 text-[#f0b8dc]" />
               </div>
             </div>
             <div>
@@ -121,8 +121,8 @@ export const LoginRoleModal: React.FC<LoginRoleModalProps> = ({
                   }}
                   className={`p-3 rounded-2xl text-left border transition-all duration-200 group flex items-start gap-3 ${
                     isSelected
-                      ? 'bg-gradient-to-br from-purple-900/40 to-[#06b6d4]/20 border-[#06b6d4]/60 shadow-lg shadow-purple-950/50'
-                      : 'bg-black/30 border-white/[0.08] hover:bg-white/[0.05] hover:border-white/[0.15]'
+                      ? 'bg-[#432053]/90 border-[#9c5295] shadow-lg shadow-[#9c5295]/25'
+                      : 'bg-black/30 border-white/[0.08] hover:bg-[#381a46]/50 hover:border-white/[0.15]'
                   }`}
                 >
                   <img
@@ -202,18 +202,18 @@ export const LoginRoleModal: React.FC<LoginRoleModalProps> = ({
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="rounded bg-black/50 border-white/[0.2] text-purple-600 focus:ring-0"
+                className="rounded bg-black/50 border-white/[0.2] text-[#9c5295] focus:ring-0"
               />
               <span>Remember diagnostic session</span>
             </label>
-            <span className="text-purple-300 hover:underline cursor-pointer">
+            <span className="text-[#f0b8dc] hover:underline cursor-pointer">
               SAML / Okta Active
             </span>
           </div>
 
           <button
             type="submit"
-            className="w-full py-2.5 text-xs font-bold text-white bg-gradient-to-r from-purple-600 via-[#8b5cf6] to-[#06b6d4] hover:opacity-95 rounded-xl shadow-lg shadow-purple-900/40 flex items-center justify-center gap-2 transition-all cursor-pointer"
+            className="w-full py-3 rounded-full text-xs font-bold text-white bg-[#9c5295] hover:bg-[#b05fa8] shadow-lg shadow-[#9c5295]/35 flex items-center justify-center gap-2 transition-all cursor-pointer"
           >
             <span>Authenticate Diagnostic Session</span>
             <ArrowRight className="w-3.5 h-3.5" />

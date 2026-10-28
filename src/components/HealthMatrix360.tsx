@@ -67,10 +67,10 @@ export const HealthMatrix360: React.FC<HealthMatrix360Props> = ({ department }) 
       case 'mint': return 'hover:border-[#10b981]/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]';
       case 'cyan': return 'hover:border-[#06b6d4]/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]';
       case 'pink': return 'hover:border-[#ec4899]/50 hover:shadow-[0_0_20px_rgba(236,72,153,0.15)]';
-      case 'purple': return 'hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]';
+      case 'purple': return 'hover:border-[#9c5295]/60 hover:shadow-[0_0_20px_rgba(156,82,149,0.3)]';
       case 'blue': return 'hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]';
       case 'amber': return 'hover:border-amber-500/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]';
-      default: return 'hover:border-purple-500/50';
+      default: return 'hover:border-[#9c5295]/50';
     }
   };
 
@@ -84,20 +84,20 @@ export const HealthMatrix360: React.FC<HealthMatrix360Props> = ({ department }) 
   return (
     <div className="space-y-6">
       {/* Header and Explanation */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#1b122c]/60 p-4 rounded-2xl border border-white/[0.06]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#381a46]/70 p-4 rounded-2xl border border-white/[0.08]">
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-bold text-white tracking-tight">360° Organizational Health Matrix</h2>
-            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+            <span className="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-[#9c5295]/20 text-[#f0b8dc] border border-[#9c5295]/30">
               6 Diagnostic Lenses
             </span>
           </div>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-[#cfbfdb] mt-0.5">
             Holistic structural telemetry synthesized from employee sentiment, team collaboration rhythms, and leadership resonance.
           </p>
         </div>
-        <div className="text-xs text-gray-400 flex items-center gap-2">
-          <Info className="w-4 h-4 text-purple-400" />
+        <div className="text-xs text-[#cfbfdb] flex items-center gap-2">
+          <Info className="w-4 h-4 text-[#f0b8dc]" />
           <span>Click any lens to expand sub-metrics & benchmarks</span>
         </div>
       </div>
@@ -113,7 +113,7 @@ export const HealthMatrix360: React.FC<HealthMatrix360Props> = ({ department }) 
               key={lens.id}
               id={`lens-card-${lens.id}`}
               onClick={() => setSelectedLens(lens)}
-              className={`group relative bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] transition-all duration-300 cursor-pointer ${borderClass} hover:-translate-y-1 shadow-xl flex flex-col justify-between`}
+              className={`group relative bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] hover:bg-[#432053]/90 transition-all duration-300 cursor-pointer ${borderClass} hover:-translate-y-1 shadow-xl flex flex-col justify-between`}
             >
               <div>
                 {/* Header row */}
@@ -179,7 +179,7 @@ export const HealthMatrix360: React.FC<HealthMatrix360Props> = ({ department }) 
               </div>
 
               {/* Card Footer */}
-              <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] text-purple-300 group-hover:text-purple-200">
+              <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] text-[#f0b8dc] group-hover:text-white">
                 <span className="font-medium">Explore full breakdown & radar</span>
                 <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
@@ -194,9 +194,9 @@ export const HealthMatrix360: React.FC<HealthMatrix360Props> = ({ department }) 
           id="lens-drilldown-modal"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
         >
-          <div className="relative w-full max-w-3xl bg-[#1d1230] border border-white/[0.12] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+          <div className="relative w-full max-w-3xl bg-[#2c1337] border border-white/[0.14] rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="p-6 bg-gradient-to-r from-purple-950/60 to-[#1d1230] border-b border-white/[0.08] flex items-center justify-between">
+            <div className="p-6 bg-gradient-to-r from-[#9c5295]/30 via-[#3d1c4a] to-[#25102f] border-b border-white/[0.08] flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/[0.1]">
                   {getLensIcon(selectedLens.icon)}

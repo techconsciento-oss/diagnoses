@@ -70,7 +70,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#140d21]/85 border-b border-white/[0.08] shadow-2xl">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#25102f]/90 border-b border-white/[0.08] shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Tier: Logo, Org Selector, Live Status, Profile */}
         <div className="flex items-center justify-between h-16 gap-4">
@@ -81,17 +81,17 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
               className="flex items-center gap-3 cursor-pointer group"
               onClick={() => setCurrentTab('dashboard')}
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#06b6d4] via-[#8b5cf6] to-[#ec4899] p-[1.5px] shadow-lg shadow-purple-900/40">
-                <div className="w-full h-full bg-[#1b122c] rounded-[10px] flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-[#06b6d4] transition-transform duration-300 group-hover:scale-110" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#9c5295] via-[#c07ab7] to-[#f0b8dc] p-[1.5px] shadow-lg shadow-[#9c5295]/30">
+                <div className="w-full h-full bg-[#2a1334] rounded-[10px] flex items-center justify-center">
+                  <Activity className="w-5 h-5 text-[#f0b8dc] transition-transform duration-300 group-hover:scale-110" />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-purple-100 to-purple-300 bg-clip-text text-transparent">
+                  <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-white via-[#f0b8dc] to-[#c07ab7] bg-clip-text text-transparent">
                     PulseHealth
                   </span>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/[0.08] text-purple-200 border border-white/[0.06]">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#9c5295]/20 text-[#f0b8dc] border border-[#9c5295]/30">
                     Enterprise
                   </span>
                 </div>
@@ -106,13 +106,13 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
                 onClick={() => setShowOrgDropdown(!showOrgDropdown)}
                 className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-gray-200 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] rounded-lg transition-colors"
               >
-                <Building2 className="w-3.5 h-3.5 text-purple-400" />
+                <Building2 className="w-3.5 h-3.5 text-[#f0b8dc]" />
                 <span>{selectedOrg}</span>
                 <ChevronDown className="w-3 h-3 text-gray-400 ml-1" />
               </button>
 
               {showOrgDropdown && (
-                <div className="absolute left-0 mt-2 w-56 bg-[#21153b] border border-white/[0.12] rounded-xl shadow-2xl py-1 z-50 backdrop-blur-xl">
+                <div className="absolute left-0 mt-2 w-56 bg-[#2c1337] border border-white/[0.14] rounded-xl shadow-2xl py-1 z-50 backdrop-blur-xl">
                   <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-gray-400 tracking-wider">
                     Select Organization
                   </div>
@@ -154,9 +154,9 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
             <button
               id="ai-copilot-header-btn"
               onClick={onOpenCopilot}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-gradient-to-r from-purple-600/30 via-pink-600/20 to-cyan-600/30 hover:from-purple-600/40 hover:to-cyan-600/40 border border-purple-500/40 text-purple-200 transition-all shadow-sm hover:shadow-purple-500/20"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#9c5295]/25 hover:bg-[#9c5295]/40 border border-[#9c5295]/50 text-[#f0b8dc] transition-all shadow-sm hover:shadow-[#9c5295]/25"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#ec4899] animate-pulse" />
+              <Sparkles className="w-3.5 h-3.5 text-[#f0b8dc] animate-pulse" />
               <span className="hidden sm:inline">AI Copilot</span>
             </button>
 
@@ -175,7 +175,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
               </button>
 
               {showRoleDropdown && (
-                <div className="absolute right-0 mt-2 w-72 bg-[#21153b] border border-white/[0.12] rounded-xl shadow-2xl py-2 z-50 backdrop-blur-xl">
+                <div className="absolute right-0 mt-2 w-72 bg-[#2c1337] border border-white/[0.14] rounded-xl shadow-2xl py-2 z-50 backdrop-blur-xl">
                   <div className="px-3 py-1 text-[10px] uppercase font-bold text-gray-400 tracking-wider">
                     Quick Switch Demo Role
                   </div>
@@ -247,13 +247,13 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           <button
             id="nav-tab-login"
             onClick={() => setCurrentTab('login')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap ${
               currentTab === 'login'
-                ? 'bg-gradient-to-r from-purple-600/40 to-pink-600/30 text-white border border-purple-500/40 shadow-sm'
-                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/35 font-bold'
+                : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <KeyRound className="w-4 h-4 text-pink-400" />
+            <KeyRound className="w-4 h-4 text-[#f0b8dc]" />
             <span>1. Login & Roles</span>
           </button>
 
@@ -261,13 +261,13 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           <button
             id="nav-tab-dashboard"
             onClick={() => setCurrentTab('dashboard')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap ${
               currentTab === 'dashboard'
-                ? 'bg-gradient-to-r from-purple-600/40 to-[#06b6d4]/30 text-white border border-purple-500/40 shadow-sm'
-                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/35 font-bold'
+                : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <BarChart3 className="w-4 h-4 text-[#06b6d4]" />
+            <BarChart3 className="w-4 h-4 text-[#f0b8dc]" />
             <span>2. Live Diagnostics</span>
           </button>
 
@@ -275,15 +275,15 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           <button
             id="nav-tab-surveys"
             onClick={() => setCurrentTab('surveys')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap ${
               currentTab === 'surveys'
-                ? 'bg-gradient-to-r from-purple-600/40 to-emerald-600/30 text-white border border-emerald-500/40 shadow-sm'
-                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/35 font-bold'
+                : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <ClipboardList className="w-4 h-4 text-emerald-400" />
+            <ClipboardList className="w-4 h-4 text-[#f0b8dc]" />
             <span>3. Survey & Assessment Engine</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/[0.15] text-[#f0b8dc] border border-white/[0.1]">
               Task Mgmt
             </span>
           </button>
@@ -292,15 +292,15 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           <button
             id="nav-tab-matrix"
             onClick={() => setCurrentTab('matrix')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap ${
               currentTab === 'matrix'
-                ? 'bg-gradient-to-r from-purple-600/40 to-[#06b6d4]/30 text-white border border-purple-500/40 shadow-sm'
-                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/35 font-bold'
+                : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <Compass className="w-4 h-4 text-[#ec4899]" />
+            <Compass className="w-4 h-4 text-[#f0b8dc]" />
             <span>4. 360° Health Matrix</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-[#ec4899]/20 text-[#ec4899] border border-[#ec4899]/30">
+            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/[0.15] text-[#f0b8dc] border border-white/[0.1]">
               6 Lenses
             </span>
           </button>
@@ -309,15 +309,15 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           <button
             id="nav-tab-insights"
             onClick={() => setCurrentTab('insights')}
-            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap ${
               currentTab === 'insights'
-                ? 'bg-gradient-to-r from-purple-600/40 to-[#06b6d4]/30 text-white border border-purple-500/40 shadow-sm'
-                : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                ? 'bg-[#9c5295] text-white shadow-md shadow-[#9c5295]/35 font-bold'
+                : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <Lightbulb className="w-4 h-4 text-[#10b981]" />
+            <Lightbulb className="w-4 h-4 text-[#f0b8dc]" />
             <span>5. Actionable Insights</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-[#10b981]/20 text-[#10b981] border border-[#10b981]/30">
+            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/[0.15] text-[#f0b8dc] border border-white/[0.1]">
               What/Why/Next
             </span>
           </button>

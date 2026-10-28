@@ -19,25 +19,25 @@ export const AIInsightStrip: React.FC<AIInsightStripProps> = ({
   return (
     <div
       id="ai-insight-strip"
-      className="relative overflow-hidden rounded-2xl p-[1.5px] bg-gradient-to-r from-purple-500/50 via-[#ec4899]/40 to-[#06b6d4]/50 shadow-2xl shadow-purple-950/60"
+      className="relative overflow-hidden rounded-2xl p-[1.5px] bg-gradient-to-r from-[#9c5295]/60 via-[#f0b8dc]/40 to-[#9c5295]/60 shadow-2xl shadow-[#9c5295]/20"
     >
-      <div className="relative bg-[#1a1128]/95 backdrop-blur-2xl rounded-[15px] p-5">
+      <div className="relative bg-[#381a46]/95 backdrop-blur-2xl rounded-[15px] p-5">
         {/* Ambient background glow dots */}
-        <div className="absolute top-0 right-1/4 w-72 h-20 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-48 h-16 bg-[#06b6d4]/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-72 h-20 bg-[#9c5295]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 w-48 h-16 bg-[#f0b8dc]/10 rounded-full blur-2xl pointer-events-none" />
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           {/* Left section: Icon + Alert Category + Text */}
           <div className="flex items-start gap-3.5 flex-1">
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-purple-600/30 to-[#ec4899]/30 border border-purple-500/40 text-[#ec4899] shadow-md flex-shrink-0 mt-0.5">
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#9c5295]/40 to-[#f0b8dc]/30 border border-[#9c5295]/50 text-[#f0b8dc] shadow-md flex-shrink-0 mt-0.5">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
 
             <div className="space-y-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center gap-1.5">
-                  <Bot className="w-3 h-3 text-[#06b6d4]" />
-                  PulseHealth Neural Diagnostic Engine
+                <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#9c5295]/25 text-[#f0b8dc] border border-[#9c5295]/40 flex items-center gap-1.5">
+                  <Bot className="w-3 h-3 text-[#f0b8dc]" />
+                  Consciento Diagnostic Telemetry Engine
                 </span>
 
                 <span
@@ -68,16 +68,16 @@ export const AIInsightStrip: React.FC<AIInsightStripProps> = ({
             <button
               id="ai-insight-details-btn"
               onClick={onNavigateToInsights}
-              className="px-3.5 py-2 text-xs font-semibold rounded-xl text-gray-300 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] transition-all flex items-center gap-1.5"
+              className="px-4 py-2 text-xs font-semibold rounded-full text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.16] transition-all flex items-center gap-1.5"
             >
               <span>View Action Cards</span>
-              <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-gray-300" />
             </button>
 
             <button
               id="ai-insight-copilot-btn"
               onClick={onOpenCopilot}
-              className="px-4 py-2 text-xs font-bold rounded-xl text-white bg-gradient-to-r from-purple-600 via-pink-600 to-[#06b6d4] hover:opacity-95 shadow-lg shadow-purple-900/40 transition-all flex items-center gap-2 group cursor-pointer"
+              className="px-5 py-2 text-xs font-bold rounded-full text-white bg-[#9c5295] hover:bg-[#b05fa8] shadow-lg shadow-[#9c5295]/35 transition-all flex items-center gap-2 group cursor-pointer"
             >
               <Zap className="w-3.5 h-3.5 text-yellow-300 group-hover:scale-110 transition-transform" />
               <span>Ask Diagnostic Copilot</span>

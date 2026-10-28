@@ -101,14 +101,14 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
     <div className="space-y-8 animate-in fade-in duration-300 max-w-5xl mx-auto py-4">
       {/* Page Title & Direct Open CTA */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold">
-          <Sparkles className="w-3.5 h-3.5 text-[#ec4899] animate-pulse" />
-          <span>Core Page 1 of 5: Enterprise Access & Persona Simulation</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#9c5295]/20 border border-[#9c5295]/40 text-[#f0b8dc] text-xs font-semibold shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-[#f0b8dc] animate-pulse" />
+          <span>Evidence-Based Diagnostics • Role Simulation Portal</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Login & Role Selection Portal
+          Enterprise Access & <span className="text-[#f0b8dc]">Role Selection</span>
         </h1>
-        <p className="text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm text-[#cfbfdb] max-w-2xl mx-auto leading-relaxed">
           Select any persona below to directly launch and experience the platform, or enter credentials.
         </p>
 
@@ -117,9 +117,9 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
           <button
             id="direct-open-app-dashboard-btn"
             onClick={onContinueToDashboard}
-            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#06b6d4] via-purple-600 to-[#ec4899] text-white font-bold text-sm shadow-xl shadow-purple-900/50 hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5 cursor-pointer"
+            className="px-7 py-3.5 rounded-full bg-[#9c5295] hover:bg-[#b05fa8] text-white font-bold text-sm shadow-xl shadow-[#9c5295]/35 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5 cursor-pointer"
           >
-            <Activity className="w-4 h-4 text-cyan-200" />
+            <Activity className="w-4 h-4 text-white" />
             <span>Directly Open App Dashboard</span>
             <ArrowRight className="w-4 h-4 text-white" />
           </button>
@@ -169,8 +169,8 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
                   onClick={() => handleRoleQuickSelect(roleUser)}
                   className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer relative overflow-hidden group ${
                     isSelected
-                      ? 'bg-gradient-to-r from-purple-900/40 via-[#1e1335] to-[#06b6d4]/20 border-[#06b6d4]/60 shadow-xl shadow-purple-950/50'
-                      : 'bg-[#1b122c]/80 hover:bg-[#21153b] border-white/[0.08] hover:border-white/[0.16]'
+                      ? 'bg-[#432053]/90 border-[#9c5295] shadow-xl shadow-[#9c5295]/25'
+                      : 'bg-[#381a46]/80 hover:bg-[#432053]/70 border-white/[0.1] hover:border-white/[0.18]'
                   }`}
                 >
                   <div className="flex items-start gap-3.5">
@@ -235,7 +235,7 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
         </div>
 
         {/* Right Column: Traditional Enterprise Credentials Box */}
-        <div className="lg:col-span-5 bg-[#1b122c]/90 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/[0.08] shadow-2xl flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 bg-[#381a46]/85 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-white/[0.12] shadow-2xl flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
               <div className="flex items-center gap-2.5">
@@ -292,11 +292,11 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
                     type="checkbox"
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
-                    className="rounded bg-black/50 border-white/[0.2] text-purple-600 focus:ring-0"
+                    className="rounded bg-black/50 border-white/[0.2] text-[#9c5295] focus:ring-0"
                   />
                   <span>Remember session</span>
                 </label>
-                <span className="text-cyan-400 hover:underline cursor-pointer">
+                <span className="text-[#f0b8dc] hover:underline cursor-pointer">
                   Reset credentials
                 </span>
               </div>
@@ -304,7 +304,7 @@ export const LoginPageView: React.FC<LoginPageViewProps> = ({
               <button
                 type="submit"
                 id="login-page-submit-btn"
-                className="w-full py-3 text-xs font-bold text-white bg-gradient-to-r from-purple-600 via-[#8b5cf6] to-[#06b6d4] hover:opacity-95 rounded-xl shadow-lg shadow-purple-900/40 flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full py-3 rounded-full text-xs font-bold text-white bg-[#9c5295] hover:bg-[#b05fa8] shadow-lg shadow-[#9c5295]/35 flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
                 <span>Sign In & Open App Directly</span>
                 <ArrowRight className="w-4 h-4" />

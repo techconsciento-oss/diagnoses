@@ -58,11 +58,11 @@ export const KPISection: React.FC<KPISectionProps> = ({ kpiList, onCardClick }) 
         };
       case 'purple':
         return {
-          badge: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
-          barGradient: 'from-purple-500 to-indigo-400',
-          glow: 'group-hover:shadow-[0_0_25px_rgba(168,85,247,0.18)]',
-          borderHover: 'group-hover:border-purple-500/40',
-          numberColor: 'text-purple-300',
+          badge: 'bg-[#9c5295]/20 text-[#f0b8dc] border-[#9c5295]/35',
+          barGradient: 'from-[#9c5295] to-[#f0b8dc]',
+          glow: 'group-hover:shadow-[0_0_25px_rgba(156,82,149,0.35)]',
+          borderHover: 'group-hover:border-[#9c5295]/60',
+          numberColor: 'text-[#f0b8dc]',
         };
       case 'amber':
       default:
@@ -85,7 +85,7 @@ export const KPISection: React.FC<KPISectionProps> = ({ kpiList, onCardClick }) 
             key={kpi.id}
             id={`kpi-card-${kpi.id}`}
             onClick={() => onCardClick && onCardClick(kpi)}
-            className={`group relative bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] transition-all duration-300 cursor-pointer ${styles.borderHover} ${styles.glow} hover:-translate-y-0.5 shadow-xl`}
+            className={`group relative bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] hover:bg-[#432053]/90 transition-all duration-300 cursor-pointer ${styles.borderHover} ${styles.glow} hover:-translate-y-0.5 shadow-xl`}
           >
             {/* Top row: Title and Icon */}
             <div className="flex items-start justify-between gap-2 mb-3">

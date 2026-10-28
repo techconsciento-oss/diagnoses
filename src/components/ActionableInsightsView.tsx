@@ -121,18 +121,18 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header and Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#1b122c]/60 p-4 rounded-2xl border border-white/[0.06]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-[#381a46]/70 p-4 rounded-2xl border border-white/[0.08]">
         <div>
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-bold text-white tracking-tight">
               Actionable Diagnostic Cards
             </h2>
-            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            <span className="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-[#9c5295]/20 text-[#f0b8dc] border border-[#9c5295]/35">
               {filteredInsights.length} Active Findings
             </span>
           </div>
-          <p className="text-xs text-gray-400 mt-0.5">
-            Structured leadership insights breaking down observations into <span className="text-cyan-300 font-semibold">What</span>, <span className="text-purple-300 font-semibold">Why</span>, <span className="text-pink-300 font-semibold">Where</span>, <span className="text-amber-300 font-semibold">Priority</span>, and <span className="text-emerald-300 font-semibold">Next</span>.
+          <p className="text-xs text-[#cfbfdb] mt-0.5">
+            Structured leadership insights breaking down observations into <span className="text-[#f0b8dc] font-semibold">What</span>, <span className="text-[#c07ab7] font-semibold">Why</span>, <span className="text-pink-300 font-semibold">Where</span>, <span className="text-amber-300 font-semibold">Priority</span>, and <span className="text-emerald-300 font-semibold">Next</span>.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
           <button
             id="add-intervention-card-btn"
             onClick={() => setIsAddModalOpen(true)}
-            className="px-4 py-2 text-xs font-bold rounded-xl text-white bg-gradient-to-r from-purple-600 to-[#06b6d4] hover:opacity-90 shadow-md shadow-purple-950 flex items-center gap-2 self-start md:self-auto cursor-pointer"
+            className="px-5 py-2.5 text-xs font-bold rounded-full text-white bg-[#9c5295] hover:bg-[#b05fa8] shadow-md shadow-[#9c5295]/30 flex items-center gap-2 self-start md:self-auto cursor-pointer transition-all"
           >
             <Plus className="w-4 h-4" />
             <span>Create Actionable Intervention</span>
@@ -161,10 +161,10 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
               key={p}
               id={`filter-priority-${p}`}
               onClick={() => setPriorityFilter(p)}
-              className={`px-2.5 py-1 text-xs rounded-lg font-medium transition-colors ${
+              className={`px-3 py-1 text-xs rounded-full font-medium transition-colors ${
                 priorityFilter === p
-                  ? 'bg-purple-600/40 text-purple-200 border border-purple-500/40'
-                  : 'text-gray-400 hover:text-gray-200 hover:bg-white/[0.04]'
+                  ? 'bg-[#9c5295] text-white shadow-sm font-semibold'
+                  : 'text-[#cfbfdb] hover:text-white hover:bg-white/[0.08]'
               }`}
             >
               {p === 'all' ? 'All Priorities' : p}
@@ -195,7 +195,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
       {/* Action Cards List */}
       <div className="space-y-4">
         {filteredInsights.length === 0 ? (
-          <div className="p-8 text-center bg-[#1b122c]/50 rounded-2xl border border-white/[0.06] text-gray-400">
+          <div className="p-8 text-center bg-[#381a46]/50 rounded-2xl border border-white/[0.08] text-[#cfbfdb]">
             No diagnostic findings match the selected filters.
           </div>
         ) : (
@@ -205,7 +205,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
               <div
                 key={card.id}
                 id={`insight-card-${card.id}`}
-                className={`bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] shadow-xl hover:border-white/[0.16] transition-all space-y-4 ${style.border}`}
+                className={`bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] shadow-xl hover:border-white/[0.18] transition-all space-y-4 ${style.border}`}
               >
                 {/* Top Row: Title, Priority Pill, Status Badge & Owner */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-white/[0.06]">
@@ -230,7 +230,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
                                 ? 'bg-emerald-500 text-white font-bold'
                                 : st === 'In Progress'
                                 ? 'bg-cyan-500 text-black font-bold'
-                                : 'bg-purple-600 text-white font-bold'
+                                : 'bg-[#9c5295] text-white font-bold'
                               : 'text-gray-400 hover:text-gray-200'
                           }`}
                         >
@@ -312,7 +312,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
       {/* Add Custom Action Card Modal */}
       {isAddModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-xl bg-[#1d1230] border border-white/[0.12] rounded-3xl p-6 shadow-2xl space-y-4">
+          <div className="relative w-full max-w-xl bg-[#2c1337] border border-white/[0.14] rounded-3xl p-6 shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
               <div className="flex items-center gap-2">
                 <Plus className="w-5 h-5 text-[#06b6d4]" />
@@ -427,7 +427,7 @@ export const ActionableInsightsView: React.FC<ActionableInsightsViewProps> = ({
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 text-xs font-bold text-white bg-gradient-to-r from-purple-600 to-[#06b6d4] rounded-xl shadow-lg hover:opacity-95"
+                  className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-[#9c5295] hover:bg-[#b05fa8] shadow-lg shadow-[#9c5295]/30 hover:opacity-95 transition-all"
                 >
                   Publish Action Card
                 </button>

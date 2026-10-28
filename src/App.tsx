@@ -104,7 +104,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#140d21] via-[#1a1128] to-[#25153d] text-gray-100 flex flex-col font-sans selection:bg-purple-500 selection:text-white pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-[#25102f] via-[#33163e] to-[#200d29] bg-grid-plum text-[#f3eff6] flex flex-col font-sans selection:bg-[#9c5295] selection:text-white pb-16">
       {/* Top Navigation Bar with Role Selector & Status */}
       <NavigationHeader
         currentTab={currentTab}
@@ -197,15 +197,15 @@ export default function App() {
             {/* Quick Dual-Panel: 360° Health Snapshot & Priority Action Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Left Column: 360 Matrix Preview (6 Lenses Snapshot) */}
-              <div className="lg:col-span-7 bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] shadow-xl flex flex-col justify-between space-y-4">
+              <div className="lg:col-span-7 bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] shadow-xl flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-white/[0.06]">
                     <div className="flex items-center gap-2">
-                      <Compass className="w-4 h-4 text-[#ec4899]" />
+                      <Compass className="w-4 h-4 text-[#f0b8dc]" />
                       <h3 className="text-sm font-bold text-white tracking-tight">
                         360° Health Matrix Snapshot
                       </h3>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#9c5295]/20 text-[#f0b8dc] border border-[#9c5295]/35">
                         6 Lenses
                       </span>
                     </div>
@@ -236,15 +236,15 @@ export default function App() {
                       <div
                         key={i}
                         onClick={() => setCurrentTab('matrix')}
-                        className="p-3 rounded-xl bg-black/30 border border-white/[0.06] hover:border-purple-500/40 hover:bg-black/40 transition-all cursor-pointer space-y-1"
+                        className="p-3 rounded-xl bg-[#25102f]/60 border border-white/[0.06] hover:border-[#9c5295]/60 hover:bg-[#432053]/50 transition-all cursor-pointer space-y-1"
                       >
                         <div className="flex justify-between items-center text-[11px] text-gray-400">
-                          <span className="font-semibold text-gray-300 truncate">{item.title}</span>
+                          <span className="font-semibold text-gray-200 truncate">{item.title}</span>
                           <span className={`font-bold ${item.color}`}>{item.score}%</span>
                         </div>
                         <div className="w-full h-1.5 rounded-full bg-white/[0.08] overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-purple-500 to-[#06b6d4]"
+                            className="h-full rounded-full bg-gradient-to-r from-[#9c5295] to-[#f0b8dc]"
                             style={{ width: `${item.score}%` }}
                           />
                         </div>
@@ -273,7 +273,7 @@ export default function App() {
               {/* Right Column: Top Actionable Insights & Active Pulses */}
               <div className="lg:col-span-5 space-y-5">
                 {/* Priority Findings Card */}
-                <div className="bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] shadow-xl space-y-3">
+                <div className="bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] shadow-xl space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
                     <div className="flex items-center gap-2">
                       <Lightbulb className="w-4 h-4 text-[#10b981]" />
@@ -318,10 +318,10 @@ export default function App() {
                 </div>
 
                 {/* Active Surveys Status Widget */}
-                <div className="bg-[#1b122c]/90 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] shadow-xl space-y-3">
+                <div className="bg-[#381a46]/85 backdrop-blur-xl rounded-2xl p-5 border border-white/[0.1] shadow-xl space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-white/[0.06]">
                     <div className="flex items-center gap-2">
-                      <ClipboardList className="w-4 h-4 text-purple-400" />
+                      <ClipboardList className="w-4 h-4 text-[#f0b8dc]" />
                       <h3 className="text-sm font-bold text-white tracking-tight">
                         Active Continuous Pulses
                       </h3>
@@ -347,7 +347,7 @@ export default function App() {
                       </div>
                       <div className="w-full h-2 rounded-full bg-white/[0.08] overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-purple-500 to-[#06b6d4]"
+                          className="h-full rounded-full bg-gradient-to-r from-[#9c5295] to-[#f0b8dc]"
                           style={{
                             width: `${Math.round(
                               (surveys[0].respondentsCount / surveys[0].totalTarget) * 100
@@ -432,7 +432,7 @@ export default function App() {
           </span>
           <button
             onClick={() => setCurrentTab('login')}
-            className="hover:text-purple-300 transition-colors cursor-pointer"
+            className="hover:text-[#f0b8dc] transition-colors cursor-pointer"
           >
             Role: <span className="text-gray-300 font-semibold">{currentUser.roleTitle.split('(')[0]}</span>
           </button>
